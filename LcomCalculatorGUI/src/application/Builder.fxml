@@ -4,16 +4,15 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 
 <AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <Button layoutX="55.0" layoutY="246.0" mnemonicParsing="false" onAction="#b1" text="Button 1" />
-      <Button layoutX="177.0" layoutY="246.0" mnemonicParsing="false" onAction="#b3" text="Button 3" />
-      <Button layoutX="348.0" layoutY="246.0" mnemonicParsing="false" onAction="#b2" text="Button 2" />
-      <Label fx:id="words" layoutX="46.0" layoutY="30.0" prefHeight="17.0" prefWidth="193.0" text="Select a folder to be scanned" />
+      <Label layoutX="46.0" layoutY="30.0" prefHeight="17.0" prefWidth="193.0" text="Select a folder to be scanned" />
       <Button fx:id="op" layoutX="265.0" layoutY="71.0" mnemonicParsing="false" onAction="#open" text="select folder" />
       <Label fx:id="filePath" layoutX="46.0" layoutY="68.0" text="File path goes here" />
       <Button fx:id="next" layoutX="460.0" layoutY="170.0" mnemonicParsing="false" onAction="#goToScene2" text="Next scene" />
       <TextField fx:id="textbox" layoutX="27.0" layoutY="172.0" text="idk" />
+      <Button fx:id="calcBtn" layoutX="408.0" layoutY="288.0" mnemonicParsing="false" onAction="#calculateClasses" text="Calculate" />
    </children>
 </AnchorPane>

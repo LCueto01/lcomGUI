@@ -22,7 +22,6 @@ public class Main extends Application {
 			String css = this.getClass().getResource("application.css").toExternalForm();// one css for multiple
 			scene.getStylesheets().add(css);
 			
-			System.out.println("Test print git 2");
 			stage.setTitle(("lcom Calculator"));
 			stage.setResizable(true);
 			stage.setScene(scene);

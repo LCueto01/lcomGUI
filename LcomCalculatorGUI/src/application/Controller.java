@@ -9,12 +9,14 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
@@ -24,28 +26,15 @@ public class Controller {
 	@FXML
 	TextField textbox;
 	@FXML
-	private Label words;
-	@FXML
 	private AnchorPane ap;
 	@FXML
 	private Label filePath;
+
 	
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	
-	
-	public void b1(ActionEvent e) {
-		words.setText("Bruh moment");
-	}
-	
-	public void b2(ActionEvent e) {
-		words.setText("Bruh moment2");
-	}
-	
-	public void b3(ActionEvent e) {
-		words.setText("Bruh moment3");
-	}
+	private int nextCoordinate = 200;
 	
 	public void open(ActionEvent e) {
 		Stage stage = (Stage) ap.getScene().getWindow();
@@ -53,7 +42,7 @@ public class Controller {
 		filePath.setText(selectedFile.getAbsolutePath());
 		
 		Scanner scan = new Scanner();
-		scan.scanFolder(selectedFile.getAbsolutePath());
+		scan.scanFolder(filePath.getText());
 		
 	}
 	
@@ -89,6 +78,25 @@ public class Controller {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void calculateClasses() {
+		try {
+			Scanner scan = new Scanner();
+			String[] scannedClasses = scan.scanFolder(filePath.getText());
+			for(int i = 0; i < scannedClasses.length;i++) {
+				Label lab = new Label(scannedClasses[i]);
+				ap.getChildren().add(lab);
+				lab.setTranslateX(30); lab.setTranslateY(nextCoordinate);
+				nextCoordinate += 130;
+			}
+			
+			
+		}
+		catch(Exception e) {
+			
+		}
+		
 	}
 
 }

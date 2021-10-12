@@ -34,7 +34,6 @@ public class Scanner {
 		for(int i = 0; i < detectedClasses.size();i++){
 			calculatedClasses[i] = calculateLcom(detectedClasses.get(i),0.8);
 		}
-		System.out.println("Scanned lmao");
 		System.out.println( calculatedClasses.length);
 		for(String i: calculatedClasses) {
 			System.out.print(i);
