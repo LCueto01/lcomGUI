@@ -22,6 +22,7 @@ public class Scanner {
 
 		// creates and adds class object to arraylist of classes
 		for (File file : files) {
+		
 			File foundFile = new File(file.getAbsoluteFile().toString());
 			Category detectedClass = new Category(foundFile.getName());
 			detectedClass = Scanning.scan(readFile2String(foundFile.getAbsolutePath()), detectedClass);

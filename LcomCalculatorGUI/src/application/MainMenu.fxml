@@ -23,6 +23,6 @@
          </font>
       </Label>
       <Button layoutX="316.0" layoutY="129.0" mnemonicParsing="false" onAction="#goToScanner" text="Go to Class Scanner" />
-      <Button layoutX="316.0" layoutY="213.0" mnemonicParsing="false" text="Create a Class" />
+      <Button layoutX="316.0" layoutY="213.0" mnemonicParsing="false" onAction="#goToBuilder" text="Create a Class" />
    </children>
 </AnchorPane>

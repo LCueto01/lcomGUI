@@ -22,7 +22,8 @@ public class Contoller2 {
 	public void add2Label(ActionEvent event) {
 		try {
 			String words = textBox.getText();
-			textBoxLabel.setText(textBoxLabel.getText() + words + "\n");
+			System.out.println(words);
+			//textBoxLabel.setText(textBoxLabel.getText() + words + "\n");
 		}catch(Exception e) {
 			
 		}

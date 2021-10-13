@@ -50,7 +50,7 @@ public class Controller {
 		
 			String words = textbox.getText();
 		
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene3.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassScanner.fxml"));
 			root = loader.load();
 			Contoller2 cont2 = loader.getController();
 			cont2.displayStuff(words);

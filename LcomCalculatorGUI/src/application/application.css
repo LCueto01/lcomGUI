@@ -10,3 +10,13 @@
 #ap{
 	-fx-background-color:"orange";
 }
+
+#classHolder{
+	-fx-border-color:black;
+	-fx-border-insets: 5;
+	-fx-padding:10;
+}
+
+#methodHolder{
+	-fx-border-color:black;
+}
