@@ -47,6 +47,20 @@ public class NavigatorController {
 		}
 		
 	}
+	public void returnToMenu(ActionEvent event) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+			root = loader.load();
+			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 }
 
 

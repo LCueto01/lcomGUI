@@ -52,7 +52,7 @@ public class Scanner {
 		return content;
 	}
 
-	private String calculateLcom(Category cat, double cutOffValue) {
+	public String calculateLcom(Category cat, double cutOffValue) {
 		String returnString = "";
 		String[] attributes = cat.getVariables();
 		int[] attributeUsage = new int[attributes.length];
@@ -70,14 +70,17 @@ public class Scanner {
 		returnString += "\ntotal methods: " + cat.getMethods().length;
 		totalLcom = 1 - ((double) sumUsage / (cat.getMethods().length * attributes.length));
 		returnString += String.format("\nTotal Lcom: " + "%.2f \n", totalLcom);
-		returnString +="\nCutoff value: " + cutOffValue;
-		
-		if (totalLcom < cutOffValue) {
-			returnString += "\nClass meets lcom requirements\n";
+		if(cutOffValue > 0) {
+			returnString +="\nCutoff value: " + cutOffValue;
 			
-		} else {
-			returnString += "\nClass doesn't meets lcom requirements\n";
+			if (totalLcom < cutOffValue) {
+				returnString += "\nClass meets lcom requirements\n";
+				
+			} else {
+				returnString += "\nClass doesn't meets lcom requirements\n";
+			}
 		}
+		
 		return returnString;
 	}
 }

@@ -28,6 +28,24 @@ public class Category {
 		methods.add(methodLine);
 	}
 	
+	public void removeFromVariables(String varLine) {
+		for(Attribute att : variables) {
+			if(att.getName().contains(varLine)) {
+				variables.remove(att);
+				break;
+			}
+		}
+	}
+	
+	public void removeFromMethods(String varLine) {
+		for(String method : methods) {
+			if(method.contains(varLine)) {
+				variables.remove(method);
+				break;
+			}
+		}
+	}
+	
 	public void incrementAttribute(int index) {
 		Attribute var = variables.get(index);
 		var.increaseUsage();
@@ -45,13 +63,13 @@ public class Category {
 	}
 	// printing stuff
 	
-	/*
+	
 	public void printVars() {
 		for(Attribute var: variables) {
 			System.out.println(var.getName());
 		}
 	}
-	*/
+	
 	
 	public void printMethods() {
 		for(String method: methods) {
