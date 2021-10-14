@@ -28,27 +28,22 @@ public class Category {
 		methods.add(methodLine);
 	}
 	
-	public void removeFromVariables(String varLine) {
-		for(Attribute att : variables) {
-			if(att.getName().contains(varLine)) {
-				variables.remove(att);
-				break;
-			}
-		}
+	public void removeFromVariables(int index) {
+		variables.remove(index);
 	}
 	
-	public void removeFromMethods(String varLine) {
-		for(String method : methods) {
-			if(method.contains(varLine)) {
-				variables.remove(method);
-				break;
-			}
-		}
+	public void removeFromMethods(int index) {
+		methods.remove(index);
 	}
 	
 	public void incrementAttribute(int index) {
 		Attribute var = variables.get(index);
 		var.increaseUsage();
+	}
+	
+	public void decrementAttribute(int index) {
+		Attribute var = variables.get(index);
+		var.decreaseUsage();
 	}
 	
 	/*Displays all variables/methods that category holds

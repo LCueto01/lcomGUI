@@ -13,8 +13,6 @@
 
 #classHolder{
 	-fx-border-color:black;
-	-fx-border-insets: 5;
-	-fx-padding:10;
 }
 
 #methodHolder{

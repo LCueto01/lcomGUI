@@ -36,7 +36,7 @@
          <content>
             <SplitPane dividerPositions="0.7385159010600707" prefHeight="193.0" prefWidth="300.0">
                <items>
-                  <VBox fx:id="classHolder" prefHeight="196.0" prefWidth="227.0" stylesheets="@application.css" />
+                  <VBox fx:id="classHolder" prefHeight="233.0" prefWidth="217.0" stylesheets="@application.css" />
                   <VBox fx:id="classDeleteBox" prefHeight="191.0" prefWidth="83.0" />
                </items>
             </SplitPane>
@@ -52,7 +52,7 @@
             </SplitPane>
          </content>
       </ScrollPane>
-      <Button layoutX="479.0" layoutY="309.0" mnemonicParsing="false" text="Delete Class" />
+      <Button layoutX="479.0" layoutY="309.0" mnemonicParsing="false" onAction="#deleteClass" text="Delete Class" />
       <Label layoutX="759.0" layoutY="68.0" text="Lcom of class">
          <font>
             <Font size="18.0" />
@@ -68,16 +68,20 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="898.0" layoutY="553.0" mnemonicParsing="false" onAction="#returnToMenu" text="Back to menu" />
+      <Button layoutX="996.0" layoutY="553.0" mnemonicParsing="false" onAction="#returnToMenu" text="Back to menu" />
       <TextArea layoutX="531.0" layoutY="108.0" prefHeight="65.0" prefWidth="192.0" text="To create a class, first create a&#10;class name then press the create&#10;class button" />
-      <ChoiceBox layoutX="347.0" layoutY="481.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="methodDrop" layoutX="347.0" layoutY="481.0" onAction="#checkMethodBox" prefWidth="150.0" />
       <Label layoutX="349.0" layoutY="353.0" text="Increment attribute usage">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <TextArea layoutX="347.0" layoutY="380.0" prefHeight="74.0" prefWidth="325.0" text="Use the drop down menu to select one of your created &#10;methods. The menu to the right will show all existing &#10;attributes. Select the attributes that this method uses &#10;then press the increment button." />
-      <ScrollPane layoutX="703.0" layoutY="370.0" prefHeight="151.0" prefWidth="218.0" />
+      <ScrollPane layoutX="703.0" layoutY="370.0" prefHeight="151.0" prefWidth="218.0">
+         <content>
+            <VBox fx:id="varBox" prefHeight="146.0" prefWidth="203.0" />
+         </content></ScrollPane>
       <TextArea layoutX="761.0" layoutY="96.0" prefHeight="90.0" prefWidth="200.0" text="After all method variable usage&#10;has been incremented, press the &#10;button  to calculate the class lcom" />
+      <Button fx:id="incrementBtn" layoutX="542.0" layoutY="481.0" mnemonicParsing="false" onAction="#increaseVarUsage" text="Increment Variables" />
    </children>
 </AnchorPane>
