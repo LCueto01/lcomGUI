@@ -19,7 +19,7 @@ public class NavigatorController {
 	public void goToScanner(ActionEvent event) {
 		try {
 		
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene3.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassScanner.fxml"));
 			root = loader.load();
 			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			scene = new Scene(root);

@@ -10,7 +10,6 @@
       <Label layoutX="46.0" layoutY="30.0" prefHeight="17.0" prefWidth="193.0" text="Select a folder to be scanned" />
       <Button fx:id="op" layoutX="176.0" layoutY="64.0" mnemonicParsing="false" onAction="#open" text="select folder" />
       <Label fx:id="filePath" layoutX="46.0" layoutY="68.0" text="File path goes here" />
-      <Button fx:id="next" layoutX="436.0" layoutY="56.0" mnemonicParsing="false" onAction="#goToScene2" text="Next scene" />
       <TextField fx:id="textbox" layoutX="27.0" layoutY="172.0" text="idk" />
       <Button fx:id="calcBtn" layoutX="496.0" layoutY="222.0" mnemonicParsing="false" onAction="#calculateClasses" text="Calculate" />
       <Button layoutX="371.0" layoutY="222.0" mnemonicParsing="false" onAction="#returnToMenu" text="Back to menu" />

@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -40,31 +41,22 @@ public class Controller {
 		File selectedFile = folderChooser.showDialog(stage);
 		filePath.setText(selectedFile.getAbsolutePath());
 		
-		Scanner scan = new Scanner();
-		scan.scanFolder(filePath.getText());
+		try {
+			Scanner scan = new Scanner();
+			scan.scanFolder(filePath.getText());
+			throw new Exception("a");
+		}catch(Exception e1) {
+			Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+			alert.setTitle("File Scan error");
+			alert.setHeaderText("Files could not be scanned");
+			alert.setResizable(false);
+			alert.setContentText("Scanner could not scan files, recheck files in the directory to make sure they are java files");
+		}
+		
 		
 	}
 	
-	public void goToScene2(ActionEvent event) {
-		try {
-		
-			String words = textbox.getText();
-		
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassScanner.fxml"));
-			root = loader.load();
-			Contoller2 cont2 = loader.getController();
-			cont2.displayStuff(words);
-			
-			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
+	
 	
 	public void goToScene1(ActionEvent event) {
 		try {
