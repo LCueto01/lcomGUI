@@ -14,8 +14,8 @@ public class Attribute {
 		numOfTimesUsed++;
 	}
 	
-	public void decreaseUsage() {
-		numOfTimesUsed--;
+	public void resetUsage() {
+		numOfTimesUsed = 0;
 	}
 	public String getName() {
 		return name;

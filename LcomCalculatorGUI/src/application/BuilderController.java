@@ -33,7 +33,7 @@ public class BuilderController {
 	@FXML
 	private ChoiceBox<String> methodDrop;
 	@FXML
-	private Button incrementBtn;
+	private Button incrementBtn, resetUsageBtn;
 	@FXML
 	private VBox varBox;
 	
@@ -192,6 +192,12 @@ public class BuilderController {
 			alert.setContentText("Class is currently closed for appending. If you wish to add more attributes, delete"
 			+ " this class and start again");
 			break;
+		case "reset":
+			alert.setTitle("Variables Reset");
+			alert.setHeaderText("Usage must be recalculated");
+			alert.setResizable(false);
+			alert.setContentText("Variable usage has been reset, you can now re-edit the class properties."
+			+ " when ready to calculate usage again, select method and increment variables");
 		}
 		
 		
@@ -228,6 +234,21 @@ public class BuilderController {
 				}
 			}
 			
+		}
+	}
+	
+	public void resetVarUsage(ActionEvent event) {
+		if(cat!= null) {
+			for(int i = 0; i < cat.getVariables().length;i++) {
+				cat.resetAttribute(i);
+			}
+			incrementedLbl.setText("Variables reset!");
+			attributeCreation = true;
+			lcomBox.getChildren().clear(); usageBox.getChildren().clear();
+			triggerAlert("reset");
+		}
+		else {
+			triggerAlert("class is null");
 		}
 	}
 }

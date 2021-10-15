@@ -41,9 +41,9 @@ public class Category {
 		var.increaseUsage();
 	}
 	
-	public void decrementAttribute(int index) {
+	public void resetAttribute(int index) {
 		Attribute var = variables.get(index);
-		var.decreaseUsage();
+		var.resetUsage();
 	}
 	
 	/*Displays all variables/methods that category holds
