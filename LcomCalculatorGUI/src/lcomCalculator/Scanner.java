@@ -65,7 +65,7 @@ public class Scanner {
 		for (int i = 0; i < attributeUsage.length; i++) {
 			sumUsage += attributeUsage[i];
 		}
-		returnString += "\n" + cat.getName();
+		returnString += cat.getName();
 		returnString += "\ntotal variables: " + attributes.length;
 		returnString += "\ntotal methods: " + cat.getMethods().length;
 		totalLcom = 1 - ((double) sumUsage / (cat.getMethods().length * attributes.length));

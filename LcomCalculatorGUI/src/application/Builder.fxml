@@ -11,27 +11,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuilderController">
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="1197.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuilderController">
    <children>
-      <Button layoutX="356.0" layoutY="309.0" mnemonicParsing="false" onAction="#createClass" text="Create Class" />
+      <Button layoutX="356.0" layoutY="283.0" mnemonicParsing="false" onAction="#createClass" text="Create Class" />
       <Button layoutX="987.0" layoutY="96.0" mnemonicParsing="false" onAction="#calculateLcom" text="Calculate LCom" />
-      <Label layoutX="213.0" layoutY="14.0" text="Class Builder">
+      <Label layoutX="941.0" layoutY="177.0" text="Variable usage goes here">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <TextField fx:id="paramBox" layoutX="356.0" layoutY="191.0" prefHeight="25.0" prefWidth="279.0">
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Button layoutX="356.0" layoutY="252.0" mnemonicParsing="false" onAction="#addToClassHolder" text="Add to attributes" />
+      <Button layoutX="356.0" layoutY="240.0" mnemonicParsing="false" onAction="#addToClassHolder" text="Add to attributes" />
       <Label layoutX="356.0" layoutY="68.0" text="Property/Method Adder">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <TextArea layoutX="347.0" layoutY="108.0" prefHeight="65.0" prefWidth="173.0" text="Type a property in the field &#10;then press one of the buttons&#10;to add to the class attributes" />
-      <Button layoutX="479.0" layoutY="252.0" mnemonicParsing="false" onAction="#addToMethodHolder" text="Add to methods" />
+      <Button layoutX="491.0" layoutY="240.0" mnemonicParsing="false" onAction="#addToMethodHolder" text="Add to methods" />
       <ScrollPane layoutX="27.0" layoutY="108.0" prefHeight="200.0" prefWidth="302.0">
          <content>
             <SplitPane dividerPositions="0.7385159010600707" prefHeight="193.0" prefWidth="300.0">
@@ -42,7 +42,7 @@
             </SplitPane>
          </content>
       </ScrollPane>
-      <ScrollPane layoutX="27.0" layoutY="353.0" prefHeight="200.0" prefWidth="302.0">
+      <ScrollPane layoutX="27.0" layoutY="378.0" prefHeight="200.0" prefWidth="302.0">
          <content>
             <SplitPane dividerPositions="0.7385159010600707" prefHeight="193.0" prefWidth="300.0">
                <items>
@@ -52,15 +52,15 @@
             </SplitPane>
          </content>
       </ScrollPane>
-      <Button layoutX="479.0" layoutY="309.0" mnemonicParsing="false" onAction="#deleteClass" text="Delete Class" />
+      <Button layoutX="491.0" layoutY="283.0" mnemonicParsing="false" onAction="#deleteClass" text="Delete Class" />
       <Label layoutX="759.0" layoutY="68.0" text="Lcom of class">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lcomLabel" layoutX="763.0" layoutY="208.0" text="Class Lcom value goes here">
+      <Label layoutX="758.0" layoutY="173.0" prefHeight="27.0" prefWidth="179.0" text="Class Lcom value goes here">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <Label fx:id="classLabel" layoutX="27.0" layoutY="68.0" text="Class name goes here">
@@ -68,20 +68,35 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="996.0" layoutY="553.0" mnemonicParsing="false" onAction="#returnToMenu" text="Back to menu" />
+      <Button layoutX="996.0" layoutY="581.0" mnemonicParsing="false" onAction="#returnToMenu" text="Back to menu" />
       <TextArea layoutX="531.0" layoutY="108.0" prefHeight="65.0" prefWidth="192.0" text="To create a class, first create a&#10;class name then press the create&#10;class button" />
-      <ChoiceBox fx:id="methodDrop" layoutX="347.0" layoutY="481.0" onAction="#checkMethodBox" prefWidth="150.0" />
-      <Label layoutX="349.0" layoutY="353.0" text="Increment attribute usage">
+      <ChoiceBox fx:id="methodDrop" layoutX="347.0" layoutY="505.0" onAction="#checkMethodBox" prefWidth="150.0" />
+      <Label layoutX="349.0" layoutY="377.0" text="Increment attribute usage">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextArea layoutX="347.0" layoutY="380.0" prefHeight="74.0" prefWidth="325.0" text="Use the drop down menu to select one of your created &#10;methods. The menu to the right will show all existing &#10;attributes. Select the attributes that this method uses &#10;then press the increment button." />
-      <ScrollPane layoutX="703.0" layoutY="370.0" prefHeight="151.0" prefWidth="218.0">
+      <TextArea layoutX="347.0" layoutY="404.0" prefHeight="74.0" prefWidth="325.0" text="Use the drop down menu to select one of your created &#10;methods. The menu to the right will show all existing &#10;attributes. Select the attributes that this method uses &#10;then press the increment button." />
+      <ScrollPane layoutX="723.0" layoutY="410.0" prefHeight="151.0" prefWidth="218.0">
          <content>
             <VBox fx:id="varBox" prefHeight="146.0" prefWidth="203.0" />
          </content></ScrollPane>
-      <TextArea layoutX="761.0" layoutY="96.0" prefHeight="90.0" prefWidth="200.0" text="After all method variable usage&#10;has been incremented, press the &#10;button  to calculate the class lcom" />
-      <Button fx:id="incrementBtn" layoutX="542.0" layoutY="481.0" mnemonicParsing="false" onAction="#increaseVarUsage" text="Increment Variables" />
+      <TextArea layoutX="761.0" layoutY="96.0" prefHeight="65.0" prefWidth="200.0" text="After all method variable usage&#10;has been incremented, press the &#10;button  to calculate the class lcom" />
+      <Button fx:id="incrementBtn" layoutX="542.0" layoutY="505.0" mnemonicParsing="false" onAction="#increaseVarUsage" text="Increment Variables" />
+      <ScrollPane layoutX="759.0" layoutY="202.0" prefHeight="163.0" prefWidth="355.0">
+         <content>
+            <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="348.0">
+              <items>
+                  <VBox fx:id="lcomBox" prefHeight="200.0" prefWidth="100.0" />
+                  <VBox fx:id="usageBox" prefHeight="200.0" prefWidth="100.0" />
+              </items>
+            </SplitPane>
+         </content>
+      </ScrollPane>
+      <Label fx:id="incrementedLbl" layoutX="722.0" layoutY="377.0" text="Select attributes to increment usage">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

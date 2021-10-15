@@ -16,26 +16,20 @@ import javafx.event.EventHandler;
 import lcomCalculator.Category;
 import lcomCalculator.Scanner;
 
-
-
-import application.NavigatorController;
-
 public class BuilderController {
 
 	@FXML
 	TextField paramBox;
 	@FXML
-	private VBox classHolder;
+	private VBox classHolder,classDeleteBox;
 	@FXML
-	private VBox classDeleteBox;
+	private VBox lcomBox,usageBox;
 	@FXML
-	private Label classLabel;
+	private Label classLabel,incrementedLbl;
 	@FXML
 	private VBox methodHolder;
 	@FXML
 	private VBox methodDeleteBox;
-	@FXML
-	private Label lcomLabel;
 	@FXML
 	private ChoiceBox<String> methodDrop;
 	@FXML
@@ -43,13 +37,15 @@ public class BuilderController {
 	@FXML
 	private VBox varBox;
 	
-	private String selectedChoice = null;
-	private Category cat = null;
-	private boolean attributeCreation = true;
+	private String selectedChoice;
+	private Category cat;
+	private boolean attributeCreation;
 
 	
 	public void initialize() {
-
+	attributeCreation = true;
+	selectedChoice = null;
+	cat = null;
 	methodDrop.setValue("Choose a method");;
 	selectedChoice = "Choose a method";
 
@@ -129,12 +125,14 @@ public class BuilderController {
 			return;
 		}
 		classLabel.setText("No Class currently created");
-		lcomLabel.setText("Lcom value goes here");
 		paramBox.clear();
 		classHolder.getChildren().clear(); classDeleteBox.getChildren().clear();
 		methodHolder.getChildren().clear(); methodDeleteBox.getChildren().clear();
 		varBox.getChildren().clear(); methodDrop.getItems().clear();
+		lcomBox.getChildren().clear();
+		usageBox.getChildren().clear();
 		cat = null;
+		attributeCreation = true;
 	}
 	
 	public void calculateLcom(ActionEvent event) {
@@ -144,7 +142,13 @@ public class BuilderController {
 		}
 		
 		Scanner scan = new Scanner();
-		lcomLabel.setText(scan.calculateLcom(cat, 0));
+		Text lcomText = new Text(scan.calculateLcom(cat, 0));
+		Text usageText = new Text(cat.getUsage2());
+		lcomText.setFont(Font.font(14));
+		usageText.setFont(Font.font(14));
+		lcomBox.getChildren().add(lcomText);
+		usageBox.getChildren().add(usageText);
+		
 	}
 	
 	public void returnToMenu(ActionEvent event) {
@@ -195,7 +199,7 @@ public class BuilderController {
 	}
 	
 	public void checkMethodBox() {
-		methodDrop.getSelectionModel().getSelectedItem();
+		incrementedLbl.setText("Select vars to increment them");
 		if(selectedChoice!= methodDrop.getSelectionModel().getSelectedItem()) {
 			selectedChoice = methodDrop.getSelectionModel().getSelectedItem();
 			
@@ -213,7 +217,7 @@ public class BuilderController {
 		if(attributeCreation) {
 			triggerAlert("lock class");
 		}
-		triggerAlert("lock class");
+		incrementedLbl.setText("Variable usage incremented!");
 		attributeCreation = false;
 		Node element;
 		if(varBox.getChildren() != null) {

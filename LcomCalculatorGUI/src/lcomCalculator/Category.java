@@ -114,10 +114,12 @@ public class Category {
 		return 0;
 	}
 
-	public void getUsage2() {
-		for(Attribute var: variables) {
-			System.out.println(var.getName() + " usage: " + var.getUsage());
+	public String getUsage2() {
+		String varUsage = "";
+		for(int i =0; i < variables.size();i++) {
+			varUsage += variables.get(i).getName() + " usage: " + variables.get(i).getUsage() + "\n";
 		}
+		return varUsage;
 	}
 
 }
