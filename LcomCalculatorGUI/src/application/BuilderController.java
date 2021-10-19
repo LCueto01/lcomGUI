@@ -100,6 +100,7 @@ public class BuilderController {
 			@Override
 			public void handle(ActionEvent arg0) {
 				cat.removeFromMethods(methodHolder.getChildren().indexOf(words));
+				methodDrop.getItems().remove(methodDeleteBox.getChildren().indexOf(deleteBtn));
 				methodHolder.getChildren().remove(methodDeleteBox.getChildren().indexOf(deleteBtn));
 				methodDeleteBox.getChildren().remove(methodDeleteBox.getChildren().indexOf(deleteBtn));
 			}
