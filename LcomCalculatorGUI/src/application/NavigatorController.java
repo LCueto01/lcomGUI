@@ -53,6 +53,8 @@ public class NavigatorController {
 			root = loader.load();
 			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
+			String css = this.getClass().getResource("application.css").toExternalForm();// one css for multiple
+			scene.getStylesheets().add(css);
 			stage.setScene(scene);
 			stage.show();
 		} catch (IOException e) {

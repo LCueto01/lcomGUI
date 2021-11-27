@@ -2,13 +2,13 @@
 #op{
 	-fx-background-color:"skyblue";
 }
-.label{
 
-	-fx-text-fill:"green";
-	
+.button{
+	-fx-background-radius: 25;
 }
-#ap{
-	-fx-background-color:"orange";
+.button:hover{
+	-fx-background-color: #00aeed;
+	-fx-text-fill: white;
 }
 
 #classHolder{

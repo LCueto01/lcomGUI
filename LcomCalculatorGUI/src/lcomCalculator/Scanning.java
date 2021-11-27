@@ -226,6 +226,9 @@ final class Scanning {
 		case "private":
 			TokenKey = TokenType.KEYWORD_PRIVATE;
 			break;
+		case "protected":
+			TokenKey = TokenType.KEYWORD_PROTECTED;
+			break;
 		case "class":
 			TokenKey = TokenType.KEYWORD_CLASS;
 			break;

@@ -12,7 +12,7 @@ public class Scanner {
 	/*
 	 * 
 	 */
-	public String[]  scanFolder(String location) {
+	public String[]  scanFolder(String location, double cutOff) {
 		File newFolder = new File(location);
 		
 		File[] files;
@@ -33,12 +33,9 @@ public class Scanner {
 	
 		
 		for(int i = 0; i < detectedClasses.size();i++){
-			calculatedClasses[i] = calculateLcom(detectedClasses.get(i),0.8);
+			calculatedClasses[i] = calculateLcom(detectedClasses.get(i),cutOff);
 		}
-		System.out.println( calculatedClasses.length);
-		for(String i: calculatedClasses) {
-			System.out.print(i);
-		}
+		
 		return calculatedClasses;
 	}
 
