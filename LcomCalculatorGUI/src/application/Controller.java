@@ -91,6 +91,8 @@ public class Controller {
 				alert.show();
 				cutoff = 0.7;
 			}
+			else if(cutoff == 0)
+				cutoff = 0;
 				
 			String[] scannedClasses = scan.scanFolder(filePath.getText(),cutoff);
 			for(int i = 0; i < scannedClasses.length;i++) {

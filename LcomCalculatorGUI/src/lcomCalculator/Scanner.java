@@ -67,7 +67,7 @@ public class Scanner {
 		returnString += "\ntotal methods: " + cat.getMethods().length;
 		totalLcom = 1 - ((double) sumUsage / (cat.getMethods().length * attributes.length));
 		returnString += String.format("\nTotal Lcom: " + "%.2f \n", totalLcom);
-		if(cutOffValue > 0) {
+		if(cutOffValue > 0 && cutOffValue != 0) {
 			returnString +="\nCutoff value: " + cutOffValue;
 			
 			if (totalLcom < cutOffValue) {
